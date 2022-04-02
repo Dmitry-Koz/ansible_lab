@@ -10,5 +10,4 @@
 + nginx_port.conf.j2  конфигурационный файл для смены портов nginx
 + nginx_server.conf.j2  конфигурационный файл для настройки балансировки
 
-        asible-playbook nginx.yml 
-команда для запуска  playbook
+<h3> порядок действий </h3>
