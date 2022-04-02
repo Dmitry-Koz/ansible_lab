@@ -11,7 +11,7 @@
 + nginx_server.conf.j2  конфигурационный файл для настройки балансировки
 
 <h3> Порядок действий </h3> <br/>
-команда для поднятия виртуальных машин
-        vagrant up
-команда для запуска playbook
-         ansible-playbook nginx.yum
+Команда для поднятия виртуальных машин<br/>
+vagrant up
+Команда для запуска playbook
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=vagrant+up)](https://git.io/typing-svg)
