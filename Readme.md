@@ -4,9 +4,9 @@
 <li>nginx.yml - playbook<li/>
 <li>ansible.cfg  конфигурационный файл ansible<li/>
 <li>inventory    inventory файл<li/>
-index.html.j2  кастомная страница html
-nginx_port.conf.j2  конфигурационный файл для смены портов nginx
-nginx_server.conf.j2  конфигурационный файл для настройки балансировки 
+<li>index.html.j2  кастомная страница html<li/>
+<li>nginx_port.conf.j2  конфигурационный файл для смены портов nginx<li/>
+<li>nginx_server.conf.j2  конфигурационный файл для настройки балансировки <li/>
 <ul/>
 
 asible-playbook nginx.yml команда для запуска  playbook
