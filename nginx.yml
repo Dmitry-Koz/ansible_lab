@@ -1,0 +1,76 @@
+---
+- name: laba 3
+  hosts: all
+  become: yes
+  vars:
+    nginx_listen_port: 8080
+  tasks:
+    - name: Install EPEL Repo package from standard repo
+      yum:
+        name: epel-release
+        state: present
+    - name: install nginx from repo
+      yum:
+        name: nginx
+        state: latest
+    - name: blocks web
+      block:    #======settings for webservers
+        - name: Create config file from template
+          template:
+            src: nginx_port.conf.j2
+            dest: /etc/nginx/nginx.conf
+          notify:
+            - reload nginx
+ #         when: index_web == "web"
+          when: inventory_hostname in groups['web']
+        - name: show index htm
+          template:
+            src: index.html.j2
+            dest: /usr/share/nginx/html/index.html
+            mode: '0555'
+          when: inventory_hostname in groups['web']
+#      when: index_web == "web"
+
+    # - name: robin upstreams
+    #   template:
+    #     src: upstreams.conf
+    #     dest: /etc/nginx/conf.d/upstreams.conf
+    #     mode: '0555'
+    #   notify: reload file
+    #   #when: server_name == "robin"
+    #   when: inventory_hostname in groups['server']
+    - name: robin upstreams
+      template:
+        src: nginx_server.conf
+        dest: /etc/nginx/nginx.conf
+        mode: '0555'
+      notify: reload file
+      #when: server_name == "robin"
+      when: inventory_hostname in groups['server']
+    
+
+
+
+  handlers:
+    - name: reload nginx
+      systemd:
+        name: nginx
+        state: restarted
+        # enabled: yes
+    - name: reload file
+      systemd:
+        name: nginx
+        state: restarted
+
+    # - name: nginx new port 
+
+    
+    # - name: instal policycoreutils
+    #   yum:
+    #     name: policycoreutils
+    #     state: latests
+    
+    # - name: nginx new port
+    #   shel: semanage port -a -t http_port_t -p tcp 8080
+    # - name: nginx new port
+    #   shel: semanage port -m -t http_port_t -p tcp 8080
