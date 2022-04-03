@@ -19,3 +19,7 @@
 Команда для запуска playbook
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=ansible-playbook+nginx.yum)](https://git.io/typing-svg)
+
+Наши кастомные страницы:
+
+ 
