@@ -22,4 +22,6 @@
 
 Наши кастомные страницы:
 
- 
+ <img src="./img/img1.pmg"/>
+
+<img src="./img/img2.pmg"/>
