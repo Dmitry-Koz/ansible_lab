@@ -1,0 +1,19 @@
+---
+- name: Install EPEL Repo package from standard repo
+  yum:
+    name:
+      - epel-release
+      - nginx
+    state: latest
+- name: Create config file from template
+  template:
+    src: nginx_port.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify:
+    - reload nginx
+- name: show index htm
+  template:
+    src: index.html.j2
+    dest: /usr/share/nginx/html/index.html
+  notify:
+    - reload nginx

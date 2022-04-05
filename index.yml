@@ -1,0 +1,13 @@
+- name: setting web
+  hosts: web
+  become: true
+  strategy: linear
+  roles:
+    - web
+
+- name: setting server
+  hosts: server
+  become: true
+  strategy: linear
+  roles:
+    - proxy
