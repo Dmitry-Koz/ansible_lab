@@ -28,15 +28,15 @@
 
 <h3>Работа балансировки:</h3>
 
-<img src="./img/img5.1.png"/>
+<img src="./ img/img5.1.png"/>
 
-<img src="./img/img5.2.png"/>
+<img src="./ img/img5.2.png"/>
 
 <h3>Проверка отказоустойчивости</h3>
 <h4>Отключим master сервер, на котором работает страница, резервный сервер становиться master, страница продолжает работать</h4>
 
-<img src="./img/img5.3.png"/>
+<img src="./ img/img5.3.png"/>
 
-<img src="./img/img5.4.png"/>
+<img src="./ img/img5.4.png"/>
 
-<img src="./img/img5.1.png"/>
+<img src="./ img/img5.1.png"/>
